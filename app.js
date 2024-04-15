@@ -167,11 +167,42 @@ const { error } = require('console');
 //   rs.pipe(res);
 // });
 
+// console.log('program has started');
+
+// setTimeout(() => {
+//   console.log('Timer callback executed');
+// }, 0);
+// fs.readFile('./files/input.txt',() => {
+//   console.log('File read complete');
+// });
+
+// setImmediate(() =>{
+//   console.log('Set immediate callback executed');
+// });
+
+// console.log('Program has compleated');
+
+
 console.log('program has started');
 
-setTimeout(() => {
-  console.log('Timer callback executed');
-}, 0);
+
+fs.readFile('./files/input.txt',() => {
+  console.log('File read complete');
+
+  setTimeout(() => {
+    console.log('Timer callback executed');
+  }, 0);
+
+  setImmediate(() =>{
+    console.log('Set immediate callback executed');
+  });
+  process.nextTick(() =>{
+    console.log('Process.next tick callback executed');
+  });
+
+
+});
+
 
 console.log('Program has compleated');
 
