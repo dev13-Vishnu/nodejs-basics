@@ -1,0 +1,1 @@
+the content in this file will be appended to the content of input.txt and will be written in output.text
